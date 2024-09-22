@@ -10,6 +10,7 @@ volumes:
 
 services:
   nginx:
+    env_file: ".env"
     container_name: nginx
     image: nginx:miguiji
     build: ./requirements/nginx/
@@ -26,6 +27,7 @@ services:
     container_name: wordpress
     image: wordpress:miguiji
     build: ./requirements/wordpress/
+    env_file: ".env"
     volumes:
       - wordpress:/var/www/html
     networks:
@@ -37,6 +39,7 @@ services:
 
   mariadb:
     container_name: mariadb
+    env_file: ".env"
     image: mariadb:miguiji
     build: requirements/mariadb/
     volumes:
@@ -72,6 +75,7 @@ services:
   portainer:
     container_name: portainer
     image: portainer:miguiji
+    env_file: ".env"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     build: requirements/portainer/
@@ -83,6 +87,7 @@ services:
     container_name: ftp
     image: ftp:miguiji
     build: requirements/ftp/
+    env_file: ".env"
     volumes:
       - wordpress:/home/admin/
     networks:

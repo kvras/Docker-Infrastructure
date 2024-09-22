@@ -1,9 +1,9 @@
 mkdir -p /var/run/vsftpd/empty
 chmod 755 /var/run/vsftpd/empty
 
-useradd -m admin
+useradd -m $FTP_USER
 
-echo "admin:admin" | chpasswd
+echo $FTP_USER:$FTP_PASS | chpasswd
 
 vsftpd /etc/vsftpd.conf
 
