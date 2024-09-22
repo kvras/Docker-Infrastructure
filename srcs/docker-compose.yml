@@ -84,8 +84,9 @@ services:
     image: ftp:miguiji
     build: requirements/ftp/
     volumes:
-      - wordpress:/ftp
+      - wordpress:/home/admin/
     networks:
       - my_network
     ports:
-      - "0-100:0-100"
+      - "20:20"
+      - "21:21"

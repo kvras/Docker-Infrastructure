@@ -91,7 +91,7 @@ $table_prefix = 'wp_';
 define('WP_CACHE', true);
 define('WP_REDIS_PORT', 6379);          // Default Redis port
 define('WP_REDIS_DATABASE', 0);
-define('WP_REDIS_HOST', '172.18.0.2');
+define('WP_REDIS_HOST', '172.18.0.3');
 
 if ( ! defined( 'WP_DEBUG' ) ) {
 	define( 'WP_DEBUG', false );

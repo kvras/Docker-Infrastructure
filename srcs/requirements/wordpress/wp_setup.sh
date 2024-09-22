@@ -20,7 +20,7 @@ wp core download --path="/var/www/html" --allow-root
 #wp config create --allow-root --dbname=db_wordpress --dbuser=root --dbpass=admin --dbhost=mariadb
 
 
-wp core install --url="http://jidev.xyz" --title="Your Site Title" --admin_user="root" --admin_password="admin" --admin_email="iguiji.etudes@gmail.com" --allow-root
+wp core install --url="https://jidev.xyz" --title="Your Site Title" --admin_user="root" --admin_password="admin" --admin_email="iguiji.etudes@gmail.com" --allow-root
 
 #echo "('WP_REDIS_HOST', '127.0.0.1');" >> wp-config.php
 
