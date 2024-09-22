@@ -16,6 +16,6 @@ EXPOSE 9000
 
 COPY wp_setup.sh /
 
-COPY wp-config.php /var/www/html/
+#COPY wp-config.php /var/www/html/
 
 CMD ["sh", "wp_setup.sh"]
