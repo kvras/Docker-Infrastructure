@@ -26,7 +26,8 @@ wp config set --allow-root FS_METHOD 'direct'
 
 wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_PASS --admin_email=$WP_EMAIL --allow-root
 
-chmod -R 755 /var/www/html/wp-content
+chmod -R 777 /var/www/html/wp-content/*
+chown -R www-data:www-data wp-content/*
 
 wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
