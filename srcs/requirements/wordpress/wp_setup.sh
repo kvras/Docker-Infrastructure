@@ -22,7 +22,7 @@ wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_p
 
 wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
-wp plugin activate redis-cache
+wp plugin activate redis-cache --allow-root
 
 service php7.4-fpm stop
 

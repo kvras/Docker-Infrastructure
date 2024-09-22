@@ -2,7 +2,7 @@
 service mariadb start
 
 
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS ${db_wordpress} ;"
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS ${DB_NAME} ;"
 
 mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'admin';"
 mysql -u root -e "FLUSH PRIVILEGES;"
