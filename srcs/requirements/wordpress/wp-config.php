@@ -21,13 +21,13 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'db_wordpress' );
+define( 'DB_NAME', getenv('DB_NAME') );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', getenv('DB_USER') );
 
 /** Database password */
-define( 'DB_PASSWORD', 'admin' );
+define( 'DB_PASSWORD', getenv('DB_PASS'));
 
 /** Database hostname */
 define( 'DB_HOST', 'mariadb' );
@@ -91,7 +91,7 @@ $table_prefix = 'wp_';
 define('WP_CACHE', true);
 define('WP_REDIS_PORT', 6379);          // Default Redis port
 define('WP_REDIS_DATABASE', 0);
-define('WP_REDIS_HOST', '172.18.0.3');
+define('WP_REDIS_HOST', 'redis');
 
 if ( ! defined( 'WP_DEBUG' ) ) {
 	define( 'WP_DEBUG', false );

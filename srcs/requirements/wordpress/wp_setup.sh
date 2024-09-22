@@ -1,6 +1,4 @@
 
-sleep 10
-
 service php7.4-fpm start
 
 
@@ -17,12 +15,10 @@ chmod -R 755 /var/www/html/wp-content
 
 wp core download --path="/var/www/html" --allow-root
 
-#wp config create --allow-root --dbname=db_wordpress --dbuser=root --dbpass=admin --dbhost=mariadb
 
 
-wp core install --url="https://jidev.xyz" --title="Your Site Title" --admin_user="root" --admin_password="admin" --admin_email="iguiji.etudes@gmail.com" --allow-root
+wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_USER --admin_password=$WP_PASS --admin_email=$WP_MAIL --allow-root
 
-#echo "('WP_REDIS_HOST', '127.0.0.1');" >> wp-config.php
 
 wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
