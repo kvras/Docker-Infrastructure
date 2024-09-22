@@ -17,7 +17,7 @@ wp core download --path="/var/www/html" --allow-root
 
 
 
-wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_USER --admin_password=$WP_PASS --admin_email=$WP_MAIL --allow-root
+wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_PASS --admin_email=$WP_EMAIL --allow-root
 
 
 wp plugin install redis-cache --activate --allow-root
