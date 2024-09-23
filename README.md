@@ -1,1 +1,1 @@
-![Alt text](433 (2).gif)
+![Alt text](433_2.gif)
