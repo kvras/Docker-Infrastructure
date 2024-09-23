@@ -1,1 +1,1 @@
-![Alt text](./433.gif)
+![Alt text](./433_black.png)
