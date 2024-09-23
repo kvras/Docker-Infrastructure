@@ -1,8 +1,7 @@
 
 service php7.4-fpm start
 
-
-cd /var/www/html/ 
+cd /var/www/html
 
 wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
@@ -26,8 +25,10 @@ wp config set --allow-root FS_METHOD 'direct'
 
 wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_PASS --admin_email=$WP_EMAIL --allow-root
 
-chmod -R 777 /var/www/html/wp-content/*
-chown -R www-data:www-data wp-content/*
+chmod -R 777 /var/www/html/wp-content/plugins
+chown -R www-data:www-data /var/www/html/wp-content/plugins
+
+
 
 wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
