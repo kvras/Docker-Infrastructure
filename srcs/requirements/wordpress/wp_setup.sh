@@ -1,4 +1,6 @@
 
+service php7.4-fpm start
+
 cd /var/www/html
 
 wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -25,6 +27,7 @@ wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
 wp plugin activate redis-cache --allow-root
 
+service php7.4-fpm stop
 
 php-fpm7.4 -F
 

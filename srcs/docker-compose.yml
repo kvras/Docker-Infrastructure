@@ -6,7 +6,6 @@ networks:
 volumes:
   wordpress:
   mariadb:
-  redis:
 
 services:
   nginx:
@@ -28,6 +27,8 @@ services:
     image: wordpress:miguiji
     build: ./requirements/wordpress/
     env_file: ".env"
+    expose:
+      - 9000
     volumes:
       - wordpress:/var/www/html
     networks:
@@ -82,7 +83,7 @@ services:
     networks:
       - my_network
     ports:
-      - 9000:9000
+      - "9000:9000"
   ftp:
     container_name: ftp
     image: ftp:miguiji
