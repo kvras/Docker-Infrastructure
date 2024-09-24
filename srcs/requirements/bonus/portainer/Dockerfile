@@ -10,7 +10,7 @@ RUN tar -xzvf portainer.tar.gz && mv portainer /usr/local/bin/portainer && chmod
 RUN mkdir /data
 
 
-COPY portainer_setup.sh /
+COPY tools/portainer_setup.sh /
 
 
 EXPOSE 9000

@@ -14,7 +14,7 @@ RUN find /var/www/html -type f -exec chmod 644 {} \;
  
 EXPOSE 9000
 
-COPY wp_setup.sh /
+COPY tools/wp_setup.sh /
 
 #COPY wp-config.php /var/www/html/
 
