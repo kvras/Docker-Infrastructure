@@ -8,6 +8,8 @@ volumes:
   mariadb:
 
 services:
+
+
   nginx:
     env_file: ".env"
     container_name: nginx
@@ -21,6 +23,8 @@ services:
       - wordpress
     networks:
       - my_network
+    restart: unless-stopped
+
 
   wordpress:
     container_name: wordpress
@@ -38,6 +42,8 @@ services:
       - redis
     restart: unless-stopped
 
+
+
   mariadb:
     container_name: mariadb
     env_file: ".env"
@@ -48,6 +54,9 @@ services:
     networks:
       - my_network
     restart: unless-stopped
+
+
+
   redis:
     container_name: redis
     image: redis:miguiji
@@ -57,6 +66,8 @@ services:
     networks:
       - my_network
     restart: unless-stopped
+
+
   adminer:
     container_name: adminer
     image: adminer:miguiji
@@ -65,6 +76,9 @@ services:
       - my_network
     ports:
       - 8000:8000
+    restart: unless-stopped
+
+
   website:
     container_name: website
     image: website:miguiji
@@ -73,6 +87,9 @@ services:
       - my_network
     ports:
       - 8080:8080
+    restart: unless-stopped
+
+
   portainer:
     container_name: portainer
     image: portainer:miguiji
@@ -84,6 +101,9 @@ services:
       - my_network
     ports:
       - "9000:9000"
+    restart: unless-stopped
+
+
   ftp:
     container_name: ftp
     image: ftp:miguiji
@@ -96,3 +116,4 @@ services:
     ports:
       - "20:20"
       - "21:21"
+    restart: unless-stopped
