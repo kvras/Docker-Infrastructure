@@ -3,3 +3,5 @@ all :
 
 clean:
 	cd srcs && docker-compose down --rmi all -v
+
+re : clean all
