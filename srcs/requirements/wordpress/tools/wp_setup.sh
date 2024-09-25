@@ -1,5 +1,4 @@
 
-service php7.4-fpm start
 
 cd /var/www/html
 
@@ -34,8 +33,6 @@ chmod -R 777 /var/www/html/wp-content
 wp plugin install redis-cache --activate --allow-root
 wp redis enable --allow-root
 wp plugin activate redis-cache --allow-root
-
-service php7.4-fpm stop
 
 php-fpm7.4 -F
 

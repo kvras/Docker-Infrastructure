@@ -42,8 +42,6 @@ services:
     image: wordpress:miguiji
     build: ./requirements/wordpress/
     env_file: ".env"
-    expose:
-      - 9000
     volumes:
       - wordpress:/var/www/html
     networks:
@@ -72,8 +70,6 @@ services:
     container_name: redis
     image: redis:miguiji
     build: ./requirements/bonus/redis/
-    volumes:
-      - redis
     networks:
       - my_network
     restart: unless-stopped
@@ -121,7 +117,7 @@ services:
     build: requirements/bonus/ftp/
     env_file: ".env"
     volumes:
-      - wordpress:/home/admin/
+      - wordpress:/home/${FTP_USER}
     networks:
       - my_network
     ports:
