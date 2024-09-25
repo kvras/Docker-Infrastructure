@@ -5,7 +5,18 @@ networks:
 
 volumes:
   wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/miguiji/data/wordpress
+      o: bind
+
   mariadb:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/miguiji/data/mariadb
+      o: bind
 
 services:
 
@@ -60,7 +71,7 @@ services:
   redis:
     container_name: redis
     image: redis:miguiji
-    build: ./requirements/redis/
+    build: ./requirements/bonus/redis/
     volumes:
       - redis
     networks:
@@ -71,7 +82,7 @@ services:
   adminer:
     container_name: adminer
     image: adminer:miguiji
-    build: ./requirements/adminer/
+    build: ./requirements/bonus/adminer/
     networks:
       - my_network
     ports:
@@ -82,7 +93,7 @@ services:
   website:
     container_name: website
     image: website:miguiji
-    build: ./requirements/website/
+    build: ./requirements/bonus/website/
     networks: 
       - my_network
     ports:
@@ -96,7 +107,7 @@ services:
     env_file: ".env"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    build: requirements/portainer/
+    build: requirements/bonus/portainer/
     networks:
       - my_network
     ports:
@@ -107,7 +118,7 @@ services:
   ftp:
     container_name: ftp
     image: ftp:miguiji
-    build: requirements/ftp/
+    build: requirements/bonus/ftp/
     env_file: ".env"
     volumes:
       - wordpress:/home/admin/

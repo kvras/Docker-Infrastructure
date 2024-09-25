@@ -15,11 +15,16 @@ wp config set --allow-root WP_REDIS_HOST 'redis'
 wp config set --allow-root WP_REDIS_PORT 6379
 wp config set --allow-root WP_REDIS_DATABASE 0
 
+
 wp config set --allow-root WP_CACHE 'true'
+
 
 wp config set --allow-root FS_METHOD 'direct'
 
+
 wp core install --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_PASS --admin_email=$WP_EMAIL --allow-root
+
+
 wp user create --allow-root $WP_USER_LOGIN $WP_USER_EMAIL --user_pass=$WP_USER_PASSWORD --role=$WP_USER_ROLE
 
 #wp_create
