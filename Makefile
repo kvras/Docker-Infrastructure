@@ -5,4 +5,4 @@ all :
 fclean:
 	cd srcs && docker-compose down --rmi all && rm -rf /home/miguiji/data/wordpress /home/miguiji/data/mariadb
 
-re : clean all
+re : fclean all
